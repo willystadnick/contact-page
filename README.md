@@ -1,6 +1,36 @@
 # contact-page
 
-Solution to [challenge](challenge.md).
+Solution to [challenge](challenge.md) using [Laravel 7](https://laravel.com/docs/7.x).
+
+## Requirements
+
+Same as [Laravel's Server Requirements](https://laravel.com/docs/7.x/installation#server-requirements)
+
+## Install
+
+Use [Composer](https://getcomposer.org/) to install dependencies:
+
+```
+composer install
+```
+
+## Serve
+
+Use [Artisan](https://laravel.com/docs/7.x/artisan) to serve locally:
+
+```
+php artisan serve
+```
+
+## Test
+
+Use [Dusk](https://laravel.com/docs/7.x/dusk) to test:
+
+```
+php artisan dusk
+```
+
+Remember to set `APP_URL=http://127.0.0.1:8000` on `.env` and [start the local server](#serve).
 
 ## Author
 
