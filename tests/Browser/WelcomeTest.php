@@ -17,7 +17,33 @@ class WelcomeTest extends DuskTestCase
     public function testExample()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit(new Welcome);
+            $browser->visit(new Welcome)
+                ->assertSee(env('APP_NAME'))
+                ->assertVisible('@name')
+                ->assertVisible('@email')
+                ->assertVisible('@phone')
+                ->assertVisible('@message')
+                ->assertVisible('@attach')
+                ->assertVisible('@submit');
         });
+    }
+
+    /**
+    * Test form.
+    *
+    * @return void
+    */
+    public function testForm()
+    {
+    	$this->browse(function (Browser $browser) {
+    		$browser->visit(new Welcome)
+    			->type('@name', 'Willy Stadnick')
+    			->type('@email', 'willy.stadnick@gmail.com')
+    			->type('@phone', '48999098394')
+    			->type('@message', 'Lorem ipsum')
+    			->attach('@attach', __DIR__.'/attach/valid.txt')
+                ->click('@submit')
+                ->assertSee('MethodNotAllowedHttpException');
+    	});
     }
 }

@@ -3,6 +3,7 @@
 namespace Tests\Browser\Pages;
 
 use Laravel\Dusk\Browser;
+use Laravel\Dusk\Page;
 
 class Welcome extends Page
 {
@@ -24,14 +25,7 @@ class Welcome extends Page
      */
     public function assert(Browser $browser)
     {
-        $browser->assertPathIs($this->url())
-            ->assertSee(env('APP_NAME'))
-            ->assertVisible('@name')
-            ->assertVisible('@email')
-            ->assertVisible('@phone')
-            ->assertVisible('@message')
-            ->assertVisible('@attach')
-            ->assertVisible('@submit');
+        $browser->assertPathIs($this->url());
     }
 
     /**

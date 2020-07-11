@@ -32,6 +32,8 @@ php artisan dusk
 
 Remember to set `APP_URL=http://127.0.0.1:8000` on `.env` and [start the local server](#serve).
 
+You may need to run `vendor/laravel/dusk/bin/chromedriver-linux` or update chromedriver version with `php artisan dusk:update` if the tests takes too long to respond or return error.
+
 ## Author
 
 | [<img src="https://avatars2.githubusercontent.com/u/1824706?s=120&v=4" width=120><br><sub>@willystadnick</sub>](https://github.com/willystadnick) |
