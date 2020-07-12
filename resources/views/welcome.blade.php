@@ -9,22 +9,28 @@
 <body>
     <div class="container mt-3">
         <h1>{{ env('APP_NAME') }}</h1>
+        @if (isset($alert))
+        <div class="alert alert-{{ $alert }}" role="alert">
+            {{ __($message) }}
+        </div>
+        @endif
         <form method="post">
+            @csrf
             <div class="form-group">
                 <label for="field-name">{{ __('app.form.name') }}</label>
-                <input type="text" class="form-control" id="field-name" name="name" required>
+                <input type="text" class="form-control" id="field-name" name="name" value="{{ old('name') }}" required>
             </div>
             <div class="form-group">
                 <label for="field-email">{{ __('app.form.email') }}</label>
-                <input type="email" class="form-control" id="field-email" name="email" required>
+                <input type="email" class="form-control" id="field-email" name="email" value="{{ old('email') }}" required>
             </div>
             <div class="form-group">
                 <label for="field-phone">{{ __('app.form.phone') }}</label>
-                <input type="text" class="form-control" id="field-phone" name="phone" required>
+                <input type="text" class="form-control" id="field-phone" name="phone" value="{{ old('phone') }}" required>
             </div>
             <div class="form-group">
                 <label for="field-message">{{ __('app.form.message') }}</label>
-                <textarea class="form-control" id="field-message" name="message" required></textarea>
+                <textarea class="form-control" id="field-message" name="message" required>{{ old('message') }}</textarea>
             </div>
             <div class="form-group">
                 <label for="field-attach">{{ __('app.form.attach') }}</label>

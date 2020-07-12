@@ -20,4 +20,8 @@ return [
         'submit' => 'Submit',
     ],
 
+    'save' => [
+        '501' => 'Not Implemented',
+    ],
+
 ];
