@@ -11,7 +11,7 @@ class Contacts extends Controller
     {
         $return = [
             'alert' => 'danger',
-            'message' => 'app.save.501',
+            'message' => 'contacts.save.501',
         ];
 
         $request->flash();
@@ -20,6 +20,6 @@ class Contacts extends Controller
 
         $return['path'] = $path;
 
-        return view('welcome', $return);
+        return view('contacts', $return);
     }
 }

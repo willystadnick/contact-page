@@ -22,31 +22,31 @@
                         <form method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group @error('name') text-danger @enderror">
-                                <label for="field-name">{{ __('app.form.name') }}</label>
+                                <label for="field-name">{{ __('contacts.form.name') }}</label>
                                 <input type="text" class="form-control" id="field-name" name="name" value="{{ old('name') }}" required>
                                 @error('name') <small>{{ $message }}</small> @enderror
                             </div>
                             <div class="form-group @error('email') text-danger @enderror">
-                                <label for="field-email">{{ __('app.form.email') }}</label>
+                                <label for="field-email">{{ __('contacts.form.email') }}</label>
                                 <input type="email" class="form-control" id="field-email" name="email" value="{{ old('email') }}" required>
                                 @error('email') <small>{{ $message }}</small> @enderror
                             </div>
                             <div class="form-group @error('phone') text-danger @enderror">
-                                <label for="field-phone">{{ __('app.form.phone') }}</label>
+                                <label for="field-phone">{{ __('contacts.form.phone') }}</label>
                                 <input type="text" class="form-control" id="field-phone" name="phone" value="{{ old('phone') }}" required>
                                 @error('phone') <small>{{ $message }}</small> @enderror
                             </div>
                             <div class="form-group @error('message') text-danger @enderror">
-                                <label for="field-message">{{ __('app.form.message') }}</label>
+                                <label for="field-message">{{ __('contacts.form.message') }}</label>
                                 <textarea class="form-control" id="field-message" name="message" required>{{ old('message') }}</textarea>
                                 @error('message') <small>{{ $message }}</small> @enderror
                             </div>
                             <div class="form-group @error('attach') text-danger @enderror">
-                                <label for="field-attach">{{ __('app.form.attach') }}</label>
+                                <label for="field-attach">{{ __('contacts.form.attach') }}</label>
                                 <input type="file" class="form-control-file" id="field-attach" name="attach" required>
                                 @error('attach') <small>{{ $message }}</small> @enderror
                             </div>
-                            <button type="submit" class="btn btn-primary">{{ __('app.form.submit') }}</button>
+                            <button type="submit" class="btn btn-primary">{{ __('contacts.form.submit') }}</button>
                             <input class="btn btn-secondary" type="reset" value="Reset">
                             <a class="btn btn-danger" href="/" role="button">Cancel</a>
                         </form>

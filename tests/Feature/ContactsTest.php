@@ -8,12 +8,7 @@ use Tests\TestCase;
 
 class ContactsTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function testExample()
+    public function testUpload()
     {
         $file = UploadedFile::fake()->createWithContent('valid.txt', 'valid');
 

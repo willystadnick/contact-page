@@ -3,20 +3,15 @@
 namespace Tests\Browser;
 
 use Laravel\Dusk\Browser;
-use Tests\Browser\Pages\Welcome;
+use Tests\Browser\Pages\Contacts;
 use Tests\DuskTestCase;
 
 class WelcomeTest extends DuskTestCase
 {
-    /**
-    * A Dusk test example.
-    *
-    * @return void
-    */
-    public function testExample()
+    public function testVisible()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit(new Welcome)
+            $browser->visit(new Contacts)
                 ->assertSee(env('APP_NAME'))
                 ->assertVisible('@name')
                 ->assertVisible('@email')
@@ -27,15 +22,10 @@ class WelcomeTest extends DuskTestCase
         });
     }
 
-    /**
-    * Test form.
-    *
-    * @return void
-    */
-    public function testForm()
+    public function testSubmit()
     {
     	$this->browse(function (Browser $browser) {
-    		$browser->visit(new Welcome)
+    		$browser->visit(new Contacts)
     			->type('@name', 'Willy Stadnick')
     			->type('@email', 'willy.stadnick@gmail.com')
     			->type('@phone', '48999098394')

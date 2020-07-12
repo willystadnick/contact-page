@@ -4,10 +4,10 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | App Language Lines
+    | Contacts Language Lines
     |--------------------------------------------------------------------------
     |
-    | The following language lines are used in app.
+    | The following language lines are used in contacts.
     |
     */
 
