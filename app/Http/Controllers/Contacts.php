@@ -16,6 +16,10 @@ class Contacts extends Controller
 
         $request->flash();
 
+        $path = $request->file('attach')->store('contacts');
+
+        $return['path'] = $path;
+
         return view('welcome', $return);
     }
 }

@@ -16,6 +16,7 @@
                         @if (isset($alert))
                         <div class="alert alert-{{ $alert }}" role="alert">
                             {{ __($message) }}
+                            <small>{{ $path }}</small>
                         </div>
                         @endif
                         <form method="post" enctype="multipart/form-data">
