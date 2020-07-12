@@ -4,21 +4,40 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\Contacts as ContactsRequest;
+use App\Contact;
 
 class Contacts extends Controller
 {
     public function save(ContactsRequest $request)
     {
-        $return = [
-            'alert' => 'danger',
-            'message' => 'contacts.save.501',
-        ];
+        try {
+            $path = $request->file('attach')->store('contacts');
 
-        $request->flash();
+            $contact = new Contact;
 
-        $path = $request->file('attach')->store('contacts');
+            $contact->fill($request->all());
 
-        $return['path'] = $path;
+            $contact->attach = $path;
+            $contact->ip = $request->ip();
+
+            $contact->save();
+
+            $return = [
+                'alert' => 'success',
+                'message' => 'contacts.save.200',
+            ];
+        } catch (\Exception $e) {
+            $return = [
+                'alert' => 'danger',
+                'message' => 'contacts.save.500',
+            ];
+
+            if (env('APP_DEBUG')) {
+                $return['debug'] = $e->getMessage();
+            }
+
+            $request->flash();
+        }
 
         return view('contacts', $return);
     }

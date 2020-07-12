@@ -14,6 +14,18 @@ Use [Composer](https://getcomposer.org/) to install dependencies:
 composer install
 ```
 
+Use [Artisan](https://laravel.com/docs/7.x/migrations#running-migrations) to migrate database:
+
+```
+php artisan migrate
+```
+
+If you are using [SQLite](https://www.sqlite.org/), you should ready the database file:
+
+```
+touch database/database.sqlite
+```
+
 ## Serve
 
 Use [Artisan](https://laravel.com/docs/7.x/artisan) to serve locally:

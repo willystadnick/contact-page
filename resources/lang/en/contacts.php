@@ -21,7 +21,8 @@ return [
     ],
 
     'save' => [
-        '501' => 'Not Implemented',
+        '200' => 'Contact saved',
+        '500' => 'Error saving contact',
     ],
 
 ];

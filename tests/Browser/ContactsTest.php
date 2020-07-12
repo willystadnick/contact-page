@@ -32,7 +32,7 @@ class WelcomeTest extends DuskTestCase
     			->type('@message', 'Lorem ipsum')
     			->attach('@attach', __DIR__.'/attach/valid.txt')
                 ->click('@submit')
-                ->assertSee('Not Implemented');
+                ->assertSee('Contact saved');
     	});
     }
 }
