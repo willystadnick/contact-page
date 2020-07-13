@@ -40,7 +40,13 @@ php artisan serve
 
 ## Test
 
-Use [Dusk](https://laravel.com/docs/7.x/dusk) to test:
+Use [Artisan](https://laravel.com/docs/7.x/testing#artisan-test-runner) to run tests:
+
+```
+php artisan test
+```
+
+Use [Dusk](https://laravel.com/docs/7.x/dusk) to run browser tests:
 
 ```
 php artisan dusk
