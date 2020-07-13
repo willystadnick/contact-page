@@ -25,4 +25,13 @@ return [
         '500' => 'Error saving contact',
     ],
 
+    'email' => [
+        'title' => 'Hello, Admin!',
+        'description' => 'A new contact was saved:',
+        'ip' => 'IP',
+        'date' => 'Date',
+        'attached' => 'The file is attached.',
+        'bye' => 'Have a nice day!',
+    ],
+
 ];

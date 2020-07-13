@@ -6,6 +6,10 @@ Solution to [challenge](challenge.md) using [Laravel 7](https://laravel.com/docs
 
 Same as [Laravel's Server Requirements](https://laravel.com/docs/7.x/installation#server-requirements)
 
+## Configuration
+
+Copy the `.env.example` file and rename it to `.env`, changing the variables accordingly.
+
 ## Install
 
 Use [Composer](https://getcomposer.org/) to install dependencies:

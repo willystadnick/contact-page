@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactSaved;
 use App\Http\Requests\Contacts as ContactsRequest;
 use App\Contact;
 
@@ -22,6 +24,9 @@ class Contacts extends Controller
 
             $contact->save();
 
+            Mail::to(env('ADMIN_MAIL'))
+                ->send(new ContactSaved($contact));
+
             $return = [
                 'alert' => 'success',
                 'message' => 'contacts.save.200',
@@ -34,6 +39,7 @@ class Contacts extends Controller
 
             if (env('APP_DEBUG')) {
                 $return['debug'] = $e->getMessage();
+                // dd($e);
             }
 
             $request->flash();
